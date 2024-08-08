@@ -1,0 +1,14 @@
+//form actions
+export const CURRENT_SELECTED_FORM = "CURRENT_SELECTED_FORM";
+export const IS_USER_AUTHENTICATED = "IS_USER_AUTHENTICATED";
+
+//posts actions
+export const ALL_POSTS_LISTS_DATA = "ALL_POSTS_LISTS_DATA";
+
+//common
+export const DISPLAY_ALERT_MESSAGE = "DISPLAY_ALERT_MESSAGE";
+export const CLOSE_ALERT_MESSAGE = "DISPLAY_ALERT_MESSAGE";
+export const SUCCESS_ALERT = "SUCCESS_ALERT";
+export const ERROR_ALERT = "ERROR_ALERT";
+export const INFO_ALERT = "INFO_ALERT";
+export const CLEAR_STORE = 'CLEAR_STORE'

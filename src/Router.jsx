@@ -1,15 +1,26 @@
+import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Posts from "./pages/Posts";
-import Root from "./pages/Root";
+const Posts = lazy(() => import("./pages/Posts"));
+import PagesLayout from "./Layout/PagesLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <PagesLayout />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/posts", element: <Posts /> },
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/posts",
+        element: (
+          <Suspense fallback={<div className="mt-10 text-center text-2xl">Loading Posts...</div>}>
+            <Posts />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
